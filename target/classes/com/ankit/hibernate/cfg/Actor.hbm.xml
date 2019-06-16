@@ -1,0 +1,15 @@
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.ankit.hibernate.pojo.Actor" table="actor">
+		<id name="actorId" />
+		<property name="actorName" />
+		<set name="movie" cascade="all">
+			<key column="actorId" />
+			<one-to-many class="com.ankit.hibernate.pojo.Movies" />
+		</set>
+	</class>
+</hibernate-mapping> 
